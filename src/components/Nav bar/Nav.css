@@ -1,7 +1,7 @@
 .nav-bar {
     display: flex;
-    margin-left: auto;
     justify-content: space-between;
+    align-items: center;
     padding: 1%;
     background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
     border: 1px solid #000000;
@@ -26,6 +26,7 @@
 
 .nav-bar .left-content img {
     width: 50px;
+    margin-right: 8px;
 }
 
 .nav-bar .left-content span {
@@ -35,6 +36,5 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 15px;
-    text-align: right;
     color: #FFFFFF;
 }
