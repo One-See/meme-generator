@@ -5,10 +5,15 @@ import React from 'react';
 
 export default class Memeform extends React.Component {
 
+    top_text = ''
+    bottom_text = ''
+
     constructor(props) {
         super(props);
         this.state = {
-            meme_image_url: null
+            meme_image_url: null,
+            top_text: this.top_text,
+            bottom_text: this.bottom_text
         }
     }
 
@@ -22,9 +27,19 @@ export default class Memeform extends React.Component {
         console.log(random_meme, 'meme')
 
         this.setState({
-            meme_image_url: random_meme.url
+            meme_image_url: random_meme.url,
+            top_text: this.top_text,
+            bottom_text: this.bottom_text
         })
 
+    }
+
+    handleTopTextInput = (event) => {
+        this.top_text = event.target.value
+    }
+
+    handleBottomTextInput = (event) => {
+        this.bottom_text = event.target.value
     }
 
     render() {
@@ -32,13 +47,15 @@ export default class Memeform extends React.Component {
             <div className='body'>
                 <div className='meme-form'>
                     <div className='input-fields'>
-                        <input type='text' placeholder='main line' />
-                        <input type='text' placeholder='punch line' />
+                        <input  onChange={this.handleTopTextInput} type='text' placeholder='main line' />
+                        <input  onChange={this.handleBottomTextInput} type='text' placeholder='punch line' />
                     </div>
                     <button onClick={this.clickHandler}>Get a new meme image</button>
                 </div>
                 <div className='meme-image'>
                     <img src={this.state.meme_image_url} alt="meme"></img>
+                    <span className='top-text'>{this.state.top_text}</span>
+                    <span className='bottom-text'>{this.state.bottom_text}</span>
                 </div>
             </div>
         )

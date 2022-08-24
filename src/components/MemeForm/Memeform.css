@@ -1,7 +1,7 @@
 .meme-form {
     display: flex;
     flex-direction: column;
-    height: 50%;
+    min-height: 50%;
     justify-content: center;
 }
 
@@ -38,12 +38,40 @@
     cursor: pointer;
 }
 
+.meme-image {
+    position: relative;
+}
 
 .meme-image img {
-    max-height: 240px;
+    max-width: 100%;
+    height: auto;
     display: block;
     margin: auto;
 }
+
+.meme-image > span {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    color: #FFFFFF;
+    /* border: 2px solid #000000; */
+}
+
+.meme-image .top-text {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    background-color: black;
+}
+.meme-image .bottom-text {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    background-color: black;
+}
+
 
 .body {
     display: flex;
